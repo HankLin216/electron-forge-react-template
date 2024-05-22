@@ -1,16 +1,13 @@
+import Router from "./router";
+import { RouterProvider } from "react-router-dom";
+
 const func = async () => {
   const response = await window.api.ping();
   console.log(response); // 打印 'pong'
 };
 
 function App() {
-  return (
-    <div>
-      <h1>Hello, Electron!!!</h1>
-      <button onClick={func}>test</button>
-      <p>{window.versions.chrome()}</p>
-    </div>
-  );
+  return <RouterProvider router={Router}></RouterProvider>;
 }
 
 export default App;
